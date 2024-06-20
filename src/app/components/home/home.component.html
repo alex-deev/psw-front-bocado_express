@@ -1,0 +1,31 @@
+<div>
+  <h1 class="text-center">Detalle del pedido</h1>
+  <div class="container">
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th class="col-2" scope="col">#</th>
+          <th class="col-4" scope="col">Producto</th>
+          <th class="col-2" scope="col">Cantidad</th>
+          <th class="col-2" scope="col">Precio</th>
+          <th class="col-2" scope="col">SubTotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Minion</td>
+          <td>2</td>
+          <td>2500</td>
+          <td>5000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h2 class="total">Total: {{ title }}</h2>
+  </div>
+  <div class="container text-center">
+    <button type="button" class="btn btn-dark">Hacer Pedido</button>
+  </div>
+</div>
