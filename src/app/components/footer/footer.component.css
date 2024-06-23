@@ -1,0 +1,23 @@
+/* footer.component.css */
+footer {
+  background-color: #000000; /* Cambia el color de fondo según tu preferencia */
+  color: #333; /* Cambia el color del texto según tu preferencia */
+  margin-top: 50px; /* Ajusta este valor según el espacio que necesites */
+}
+
+.text-white {
+  color: #fdfdfd !important; /* Cambia el color del texto según tu preferencia */
+}
+
+.text-white a {
+  color: #dfdfdf; /* Cambia el color de los enlaces según tu preferencia */
+}
+
+.text-white a:hover {
+  color: #0059ff; /* Cambia el color de los enlaces al pasar el cursor según tu preferencia */
+}
+
+footer .btn-floating {
+  background-color: #161515;
+  margin: 0 10px; /* Añade margen a la izquierda y derecha de los botones */
+}
