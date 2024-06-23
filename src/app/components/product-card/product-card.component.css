@@ -1,0 +1,26 @@
+.card {
+    width: 16rem;
+    transition: transform .2s;
+    transform: translateZ(0);
+}
+.card:hover {
+    transform: scale(1.08);
+}
+
+.card-body {
+    backface-visibility: hidden;
+}
+
+.card-text-truncate {
+    -webkit-line-clamp: 3;      /* Numero de lineas que seran visibles */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-title-truncate {
+    -webkit-line-clamp: 2;      /* Numero de lineas que seran visibles */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
