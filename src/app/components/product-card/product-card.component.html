@@ -1,12 +1,16 @@
 <div class="card rounded-4 shadow">
     <img class="card-img-top rounded-top-4" src="assets/images/hamburguesa_prueba.jpg" alt="hamburger">
     <div class="card-body">
-        <h5 class="card-title card-title-truncate">Hamburguesas de pollo y halloumi</h5>
-        <p class="card-text card-text-truncate">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione non ex quibusdam. Esse, recusandae cupiditate.
+        <div class="d-flex mb-1">
+            <span class="flex-grow-1">{{ estado }}</span>
+            <span class="">{{ precio }}</span>
+        </div>
+        <h5 class="card-title card-title-truncate mb-1">{{ nombre }}</h5>
+        <p class="card-text card-text-truncate lh-sm">
+            <small>{{ descripcion }}</small>
         </p>
         <div class="text-center">
-            <a href="#" class="btn btn-outline-primary rounded-pill">Añadir al carrito</a>
+            <a href="#" class="btn btn-outline-dark rounded-pill">Añadir al carrito</a>
         </div>
     </div>
 </div>

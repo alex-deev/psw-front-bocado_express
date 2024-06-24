@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
+  
+  id = 0;
+  nombre = "Hamburguesas de pollo y halloumi";
+  descripcion = "Lorem ipsum dolor sit consectetur adipisicing elit. Autem placeat beatae id.";
+  precio = "$ 10.5";
+  imagen = "";
+  estado = "Disponible";
 
 }
