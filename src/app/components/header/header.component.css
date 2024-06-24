@@ -1,0 +1,18 @@
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+#cart{
+    background-color: white;
+    border-radius: 30%;
+}
+#cart:hover{
+    background-color: aquamarine;
+}
+#carrito{
+    height: 10%;
+    width: 10%;
+}
+.logo{
+    height: 90px;
+    width: 100px;
+}
