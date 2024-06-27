@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductCardComponent } from '../product-card/product-card.component';
+import { Producto } from '../../models/producto';
+import { ProductoService } from '../../services/producto.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,4 +12,21 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 })
 export class MenuComponent {
 
+  productos!: Array<Producto>;
+  
+  constructor( private productoService: ProductoService ) {
+    this.getProductos();
+  }
+
+  getProductos() {
+    this.productoService.getAll().subscribe(
+      data => {
+        this.productos = data;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+  
 }

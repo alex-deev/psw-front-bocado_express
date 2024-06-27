@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductoService } from '../../services/producto.service';
+import { error } from 'console';
+import { Producto } from '../../models/producto';
 
 @Component({
   selector: 'app-product-card',
@@ -8,12 +11,7 @@ import { Component } from '@angular/core';
   styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent {
-  
-  id = 0;
-  nombre = "Hamburguesas de pollo y halloumi";
-  descripcion = "Lorem ipsum dolor sit consectetur adipisicing elit. Autem placeat beatae id.";
-  precio = "$ 10.5";
-  imagen = "";
-  estado = "Disponible";
+
+  @Input() producto!: Producto;
 
 }
