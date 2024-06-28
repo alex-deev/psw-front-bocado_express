@@ -15,15 +15,33 @@
         <tr>
           <th scope="row">1</th>
           <td>Minion</td>
-          <td>2</td>
+          <td>
+            <input class="form-control" type="number" name="cantidad" id="cantidad" [defaultValue]="1">
+          </td>
           <td>2500</td>
           <td>5000</td>
         </tr>
       </tbody>
     </table>
   </div>
+
   <div class="container">
-    <h2 class="total">Total: {{ title }}</h2>
+    <div class="row">
+      <div class="col-6">
+        <input class="form-control" type="text" name="nombreCliente" id="nombreCliente" placeholder="Nombre de cliente">
+        <input class="form-control" type="text" name="observacion" id="observacion" placeholder="Ingrese sus preferencias">
+        <input class="form-control" type="number" name="telefono" id="telefono" placeholder="Número de teléfono">
+        <input class="form-control" type="text" name="direccionEnvio" id="direccionEnvio" placeholder="Dirección de envío">
+        <select class="form-control" name="tipoEntrega" id="tipoEntrega">
+          <option value="0" selected disabled>Elija el tipo de entrega</option>
+          <option value="delivery">Delivery</option>
+          <option value="retiroEnLocal">Retiro en Local</option>
+        </select>
+      </div>
+      <div class="col-6 text-center">
+        <h2 class="total">Total: {{ title }}</h2>
+      </div>
+    </div>
   </div>
   <div class="container text-center">
     <button type="button" class="btn btn-dark">Hacer Pedido</button>
