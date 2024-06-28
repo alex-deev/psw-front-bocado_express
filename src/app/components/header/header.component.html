@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="d-flex p-2">
                     <div>
-                        <a class="navbar-brand" href="#">Bocado Express</a>
+                        <a class="navbar-brand" routerLink="/">Bocado Express</a>
                     </div>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -24,7 +24,8 @@
                 <!--BUSQUEDA Y CARRITO-->
                 <div class="d-flex justify-content-end">
                     <div class="d-flex p-2" id="cart">
-                        <a (click)="cambiar()">
+                        <a routerLink="/carrito-compra">
+                            
                             <img class="carrito" src="assets/images/carro-vacio.png" alt="" width="30">
                         </a>
                         <!-- <div class="d-flex p-2">

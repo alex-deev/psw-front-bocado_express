@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-carrito-compra',
+  selector: 'carrito',
   standalone: true,
   imports: [],
   templateUrl: './carrito-compra.component.html',

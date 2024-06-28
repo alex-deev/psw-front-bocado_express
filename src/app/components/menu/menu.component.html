@@ -1,10 +1,8 @@
 <div class="container mt-4">
-    <h1 class="pb-3">Menu</h1>
+    <h1 class="pb-3">Productos</h1>
     <div class="row row-cols-md-auto row-cols-sm-2 gy-4 justify-content-center">
-        @for (producto of productos; track $index) {
             <div class="col d-flex justify-content-center">
-                <app-product-card></app-product-card>
+                <app-product-list></app-product-list>
             </div>
-        }
     </div>
 </div>
