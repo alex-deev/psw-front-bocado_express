@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  @Input() state?: boolean;
+  @Output() toggle = new EventEmitter<boolean>();
 
+  cambiar() {
+    this.state = !this.state;
+    this.toggle.emit(this.state);
+  }
 }
