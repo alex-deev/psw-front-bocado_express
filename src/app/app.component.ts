@@ -14,6 +14,4 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   title = 'project-bocado-express';
-
-  mostrarListaPedido = false;
 }

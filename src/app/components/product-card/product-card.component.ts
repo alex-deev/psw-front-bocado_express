@@ -12,6 +12,4 @@ import { Producto } from '../../models/producto';
 })
 export class ProductCardComponent {
 
-  @Input() producto!: Producto;
-
 }
