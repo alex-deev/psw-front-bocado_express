@@ -1,12 +1,25 @@
 import { Component } from '@angular/core';
+import { PedidoService } from '../../services/pedido.service';
+import { Producto } from '../../models/producto';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  title= "2000"
+
+  productosCarrito!: Producto[];
+  
+  constructor( private pedidoService: PedidoService ) {
+    this.obtenerCarrito();
+  }
+
+  obtenerCarrito() {
+    this.productosCarrito = this.pedidoService.obtenerCarrito();
+  }
+
 }
