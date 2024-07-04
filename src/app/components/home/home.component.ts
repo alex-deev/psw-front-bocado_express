@@ -22,4 +22,12 @@ export class HomeComponent {
     this.productosCarrito = this.pedidoService.obtenerCarrito();
   }
 
+  obtenerTotalPedido(): number {
+    let total = 0;
+    this.productosCarrito.forEach((producto) => {
+      total += producto.precio * producto.cantidad;
+    });
+    return total;
+  }
+
 }
