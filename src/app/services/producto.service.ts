@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ProductoService {
 
-  // Crea un cliente HTTP para conectarse al backend
+  private apiUrl = 'http://localhost:3000/api/';
+
   constructor( private http: HttpClient ) { }
 
   getAll(): Observable<any> {
@@ -17,6 +18,6 @@ export class ProductoService {
       })
     }
 
-    return this.http.get('http://localhost:3000/api/producto/', httpOption);
+    return this.http.get(this.apiUrl + 'producto', httpOption);
   }
 }
