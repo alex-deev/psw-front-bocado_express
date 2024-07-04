@@ -14,13 +14,13 @@
       <tbody>
         @for (producto of productosCarrito; track $index) {
           <tr>
-            <th scope="row">{{ $index }}</th>
+            <th scope="row">{{ $index + 1 }}</th>
             <td>{{ producto.nombre }}</td>
             <td>
               <input class="form-control" type="number" name="cantidad" id="cantidad" [defaultValue]="1" [(ngModel)]="producto.cantidad">
             </td>
-            <td>2500</td>
-            <td>5000</td>
+            <td>{{ producto.precio }}</td>
+            <td> {{ producto.precio * producto.cantidad }} </td>
           </tr>
         }
       </tbody>
@@ -41,7 +41,7 @@
         </select>
       </div>
       <div class="col-6 text-center">
-        <h2 class="total">Total: </h2>
+        <h2 class="total">Total: {{ obtenerTotalPedido() }} </h2>
       </div>
     </div>
   </div>
