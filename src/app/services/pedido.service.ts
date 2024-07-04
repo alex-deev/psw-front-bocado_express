@@ -10,7 +10,7 @@ import { Pedido } from '../models/pedido';
 export class PedidoService {
 
   private apiUrl = 'http://localhost:3000/api/';
-  private carrito!: Producto[];
+  private carrito: Producto[]=[];
 
   constructor( private http: HttpClient ) { }
 
