@@ -1,6 +1,7 @@
 import { PedidoProducto } from "./pedidoProducto";
 
 export class Pedido {
+    fechaHora!: Date;
     direccionEnvio!: string;
     telefono!: string;
     observacion!: string;
@@ -9,7 +10,8 @@ export class Pedido {
     nombreCliente!: string;
     pedidoProductos!: PedidoProducto[];
 
-    Pedido(direccionEnvio:string, telefono:string, observacion:string, precioTotal:number, tipoEntrega:string, nombreCliente:string, pedidoProductos:PedidoProducto[]) {
+    Pedido(fechaHora:Date, direccionEnvio:string, telefono:string, observacion:string, precioTotal:number, tipoEntrega:string, nombreCliente:string, pedidoProductos:PedidoProducto[]) {
+        this.fechaHora = fechaHora;
         this.direccionEnvio = direccionEnvio;
         this.telefono = telefono;
         this.observacion = observacion;
