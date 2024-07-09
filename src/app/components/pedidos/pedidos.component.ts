@@ -3,8 +3,7 @@ import { PedidoService } from '../../services/pedido.service';
 import { Pedido } from '../../models/pedido';
 
 import Swal from 'sweetalert2';
-import { Producto } from '../../models/producto';
-import { PedidoProducto } from '../../models/pedidoProducto';
+import { formatDate } from "@angular/common";
 
 @Component({
   selector: 'app-pedidos',
@@ -41,5 +40,9 @@ export class PedidosComponent {
       title: 'Productos comprados',
       html: texto,
     });
+  }
+
+  formatearFecha(fecha: any) {
+    return formatDate(fecha, 'short', 'en-US');
   }
 }
