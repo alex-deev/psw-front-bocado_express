@@ -3,6 +3,8 @@ import { PedidoService } from '../../services/pedido.service';
 import { Producto } from '../../models/producto';
 import { FormsModule } from '@angular/forms';
 import { Pedido } from '../../models/pedido';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-home',
@@ -36,6 +38,17 @@ export class HomeComponent {
     if (this.productosCarrito.length == 0) {
       console.log('Carrito vacio');
     } else {
+      Swal.fire({
+        background: "transparent",
+        title: '<span style="color: white;">Delicioso!</span>',
+        html: '<span style="color: white;">Realizando su hamburguesa.</span>',
+        imageUrl: "https://i.pinimg.com/originals/43/e1/c2/43e1c20c93b24a7ac41ac8e022f827fc.gif",
+        imageWidth: 200,
+        imageHeight: 200,
+        imageAlt: "Custom image",
+        showConfirmButton: false 
+      });
+      
       this.nuevoPedido.precioTotal = this.obtenerTotalPedido();
       this.pedidoService.hacerPedido(this.nuevoPedido).subscribe();
     }
