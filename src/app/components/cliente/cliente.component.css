@@ -10,7 +10,7 @@
 
 #carrito:hover {
     transform: scale(1.088);
-    background-color: bisque;
+    background-color: rgb(167, 159, 250);
 }
 
 #carrito-icon{
