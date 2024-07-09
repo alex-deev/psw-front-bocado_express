@@ -13,8 +13,19 @@ export class PedidoService {
   private apiUrl = 'http://localhost:3000/api/';
 
   private carrito: Producto[] = [];
+  public cantidadCarrito: number = 0;
 
   constructor( private http: HttpClient ) {}
+
+  obtenerPedidos(): Observable<any> {
+    let httpOption = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }
+    
+    return this.http.get(this.apiUrl + 'pedido', httpOption);
+  }
 
   hacerPedido(nuevoPedido: Pedido): Observable<any> {
     let httpOption = {
@@ -24,6 +35,14 @@ export class PedidoService {
     }
     nuevoPedido.pedidoProductos = this.cargarProductosEnPedido();
     // console.log(JSON.stringify(nuevoPedido));
+
+    // const mensajeWhatsapp = `¡Nuevo Pedido!\n\n${JSON.stringify(nuevoPedido)}`;
+    // const encodedMessage = encodeURIComponent(mensajeWhatsapp);
+    // const whatsappUrl = `https://wa.me/+5493888538446?text=${encodedMessage}`;
+
+    // // Abrir WhatsApp en una nueva ventana
+    // window.open(whatsappUrl, '_blank');
+
     return this.http.post(this.apiUrl + 'pedido', nuevoPedido, httpOption);
   }
 
@@ -43,6 +62,7 @@ export class PedidoService {
     } else {
       producto.cantidad = 1;
       this.carrito.push(producto);
+      this.cantidadCarrito ++ ;
     }
     // console.log(JSON.stringify(this.carrito));
   }

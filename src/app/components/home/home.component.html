@@ -1,4 +1,4 @@
-<div>
+<div class="mt-4">
   <h1 class="text-center">Detalle del pedido</h1>
   <div class="container">
     <table class="table mt-5">
@@ -17,7 +17,7 @@
             <td scope="row">{{ $index + 1 }}</td>
             <td>{{ producto.nombre }}</td>
             <td>
-              <input class="form-control" type="number" name="cantidad" id="cantidad" [defaultValue]="1" [(ngModel)]="producto.cantidad">
+              <input class="form-control" type="number" name="cantidad" id="cantidad" min="1" [defaultValue]="1" [(ngModel)]="producto.cantidad">
             </td>
             <td>$ {{ producto.precio }}</td>
             <td>$ {{ producto.precio * producto.cantidad }} </td>
@@ -31,25 +31,27 @@
     </table>
   </div>
 
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-6">
-        <input class="form-control mb-2" type="text" name="nombreCliente" id="nombreCliente" placeholder="Nombre de cliente" [(ngModel)]="nuevoPedido.nombreCliente">
-        <input class="form-control mb-2" type="text" name="observacion" id="observacion" placeholder="Ingrese sus preferencias" [(ngModel)]="nuevoPedido.observacion">
-        <input class="form-control mb-2" type="number" name="telefono" id="telefono" placeholder="Número de teléfono" [(ngModel)]="nuevoPedido.telefono">
-        <input class="form-control mb-2" type="text" name="direccionEnvio" id="direccionEnvio" placeholder="Dirección de envío" [(ngModel)]="nuevoPedido.direccionEnvio">
-        <select class="form-control mb-2" name="tipoEntrega" id="tipoEntrega" [(ngModel)]="nuevoPedido.tipoEntrega">
-          <option value="0" disabled>Tipo de entrega...</option>
-          <option value="Delivery">Delivery</option>
-          <option value="Retiro en Local">Retiro en Local</option>
-        </select>
-      </div>
-      <div class="col-6 text-center align-self-center">
-        <h2 class="total">Total a pagar: $ {{ obtenerTotalPedido() }} </h2>
-        <div class="mt-4">
-          <button type="button" class="btn btn-lg btn-dark rounded-pill" (click)="hacerPedido()">Hacer Pedido</button>
-        </div>
+  <form ngNativeValidate>
+    <div class="container mt-5">
+      <div class="row">
+          <div class="col-7">
+            <input class="form-control mb-2" type="text" name="nombreCliente" id="nombreCliente" placeholder="Nombre de cliente" [(ngModel)]="nuevoPedido.nombreCliente" [required]="true">
+            <input class="form-control mb-2" type="text" name="observacion" id="observacion" placeholder="Ingrese sus preferencias" [(ngModel)]="nuevoPedido.observacion" [required]="true">
+            <input class="form-control mb-2" type="number" name="telefono" id="telefono" placeholder="Número de teléfono" [(ngModel)]="nuevoPedido.telefono" [required]="true">
+            <input class="form-control mb-2" type="text" name="direccionEnvio" id="direccionEnvio" placeholder="Dirección de envío" [(ngModel)]="nuevoPedido.direccionEnvio" [required]="true">
+            <select class="form-control mb-2" name="tipoEntrega" id="tipoEntrega" [(ngModel)]="nuevoPedido.tipoEntrega" [required]="true">
+              <option value="0" disabled>Tipo de entrega...</option>
+              <option value="Delivery">Delivery</option>
+              <option value="Retiro en Local">Retiro en Local</option>
+            </select>
+          </div>
+          <div class="col-5 text-center align-self-center">
+            <h2 class="total">Total a pagar: $ {{ obtenerTotalPedido() }} </h2>
+            <div class="mt-4">
+              <button type="submit" class="btn btn-lg btn-dark rounded-pill" (click)="hacerPedido()">Hacer Pedido</button>
+            </div>
+          </div>
       </div>
     </div>
-  </div>
+  </form>
 </div>

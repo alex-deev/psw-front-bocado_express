@@ -1,0 +1,17 @@
+<!--BUSQUEDA Y CARRITO-->
+<div class="mt-5 d-flex justify-content-end pe-2">
+    <div class="d-flex p-2" id="cart" (click)="cambiar()">
+        <div id="carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <div class="d-flex p-2">
+            <span>{{ pedidoService.cantidadCarrito }}</span>
+        </div>
+    </div>
+</div>
+
+@if (mostrarListaPedido) {
+    <app-home></app-home>
+} @else {
+    <app-menu></app-menu>
+}

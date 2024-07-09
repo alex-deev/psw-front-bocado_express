@@ -1,9 +1,6 @@
-<app-header [state]="mostrarListaPedido" (toggle)="mostrarListaPedido=$event"></app-header>
+<app-header></app-header>
 
-@if (mostrarListaPedido) {
-    <app-home></app-home>
-} @else {
-    <app-menu></app-menu>
-}
+<router-outlet></router-outlet>
 
 <app-footer></app-footer>
+

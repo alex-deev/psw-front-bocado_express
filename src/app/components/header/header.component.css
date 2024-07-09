@@ -3,14 +3,17 @@
 }
 #cart{
     background-color: white;
-    border-radius: 30%;
+    border-radius: 25%;
 }
 #cart:hover{
-    background-color: aquamarine;
+    background-color: rgb(255, 236, 127);
 }
 #carrito{
-    height: 10%;
-    width: 10%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 30px;
+    line-height: 40px;
 }
 .logo{
     height: 90px;
