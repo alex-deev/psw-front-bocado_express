@@ -36,7 +36,10 @@ export class HomeComponent {
 
   hacerPedido() {
     if (this.productosCarrito.length == 0) {
-      console.log('Carrito vacio');
+      Swal.fire({
+        title: 'Carrito vacío',
+        html: '<span>Su carrito de compras está vacío.</span><br><span>Primero añada algunos deliciosos productos!</span>'
+      })
     } else {
       Swal.fire({
         background: "transparent",
@@ -45,8 +48,9 @@ export class HomeComponent {
         imageUrl: "https://i.pinimg.com/originals/43/e1/c2/43e1c20c93b24a7ac41ac8e022f827fc.gif",
         imageWidth: 200,
         imageHeight: 200,
-        imageAlt: "Custom image",
-        showConfirmButton: false 
+        imageAlt: "Hamburguesa saltarina",
+        showConfirmButton: false,
+        timer: 2000,
       });
       
       this.nuevoPedido.precioTotal = this.obtenerTotalPedido();

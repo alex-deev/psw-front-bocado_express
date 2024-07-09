@@ -43,8 +43,6 @@ export class PedidoService {
     // // Abrir WhatsApp en una nueva ventana
     // window.open(whatsappUrl, '_blank');
 
-    this.enviarMensaje(nuevoPedido);
-
     return this.http.post(this.apiUrl + 'pedido', nuevoPedido, httpOption);
   }
 
