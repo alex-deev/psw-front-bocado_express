@@ -1,0 +1,22 @@
+#carrito {
+    position: absolute;
+    right: 1rem;
+    top: 1.9rem;
+    width: 5rem;
+    height: 5rem;
+    transition: transform .2s;
+    transform: translateZ(0);
+}
+
+#carrito:hover {
+    transform: scale(1.088);
+    background-color: bisque;
+}
+
+#carrito-icon{
+    display: inline-block;
+    text-align: center;
+    vertical-align: bottom;
+    font-size: 30px;
+    line-height: 40px;
+}

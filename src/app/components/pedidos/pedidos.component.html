@@ -1,26 +1,28 @@
-<div class="container">
-    <table class="table mt-5">
-      <thead>
-        <tr>
-          <th class="col-2" scope="col">#</th>
-          <th class="col-4" scope="col">Nombre del Cliente</th>
-          <th class="col-2" scope="col">Precio Total</th>
-          <th class="col-2" scope="col">Tipo de Entrega</th>
-          <th class="col-2" scope="col">Productos</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (pedido of pedidos; track $index) {
-            <tr>
-                <td scope="row">{{ $index }}</td>
-                <td>{{ pedido.nombreCliente }}</td>
-                <td>{{ pedido.precioTotal }}</td>
-                <td>{{ pedido.tipoEntrega }}</td>
-                <td>
-                    <input class="btn btn-outline-dark rounded-pill" type="button" value="Productos" (click)="mostrarProductos(pedido.pedidoProductos)">
-                </td>
-            </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+<div class="container mt-4">
+  <h1 class="pb-3">Lista de Pedidos</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-2" scope="col">#</th>
+        <th class="col-4" scope="col">Nombre del Cliente</th>
+        <th class="col-2" scope="col">Precio Total</th>
+        <th class="col-2" scope="col">Tipo de Entrega</th>
+        <th class="col-2" scope="col">Comprado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (pedido of pedidos; track $index) {
+      <tr>
+        <td scope="row">{{ $index }}</td>
+        <td>{{ pedido.nombreCliente }}</td>
+        <td>$ {{ pedido.precioTotal }}</td>
+        <td>{{ pedido.tipoEntrega }}</td>
+        <td>
+          <input class="btn btn-outline-dark rounded-pill" type="button" value="Productos"
+            (click)="mostrarProductos(pedido.pedidoProductos)">
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

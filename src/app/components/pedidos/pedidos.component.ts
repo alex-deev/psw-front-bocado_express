@@ -32,10 +32,14 @@ export class PedidosComponent {
     )
   }
 
-  mostrarProductos(productos: PedidoProducto[]) {
+  mostrarProductos(productos: any) {
+    let texto = "";
+    productos.forEach((producto: any) => {
+      texto += `• ${producto.producto.nombre}: Cantidad ${producto.cantidad}, Subtotal $${producto.producto.precio * producto.cantidad}<br>`;
+    });
     Swal.fire({
       title: 'Productos comprados',
-      text: JSON.stringify(productos),
+      html: texto,
     });
   }
 }

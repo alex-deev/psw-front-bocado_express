@@ -36,13 +36,6 @@ export class PedidoService {
     nuevoPedido.pedidoProductos = this.cargarProductosEnPedido();
     // console.log(JSON.stringify(nuevoPedido));
 
-    // const mensajeWhatsapp = `¡Nuevo Pedido!\n\n${JSON.stringify(nuevoPedido)}`;
-    // const encodedMessage = encodeURIComponent(mensajeWhatsapp);
-    // const whatsappUrl = `https://wa.me/+5493888538446?text=${encodedMessage}`;
-
-    // // Abrir WhatsApp en una nueva ventana
-    // window.open(whatsappUrl, '_blank');
-
     return this.http.post(this.apiUrl + 'pedido', nuevoPedido, httpOption);
   }
 
