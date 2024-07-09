@@ -43,7 +43,36 @@ export class PedidoService {
     // // Abrir WhatsApp en una nueva ventana
     // window.open(whatsappUrl, '_blank');
 
+    this.enviarMensaje(nuevoPedido);
+
     return this.http.post(this.apiUrl + 'pedido', nuevoPedido, httpOption);
+  }
+
+  enviarMensaje(nuevoPedido: Pedido){
+    
+    let productosTexto = "";
+    
+    nuevoPedido.pedidoProductos.forEach((producto: any) => {
+      productosTexto += `• ${producto.producto.nombre}: Cantidad ${producto.producto}, Precio por unidad $ ${producto.producto.precio}<br>`;
+    });
+
+    const pedidoTexto = 
+                      `Dirección de Envío: ${nuevoPedido.direccionEnvio}
+                      Teléfono: ${nuevoPedido.telefono}
+                      Observación: ${nuevoPedido.observacion}
+                      Precio Total: $${nuevoPedido.precioTotal}
+                      Tipo de Entrega: ${nuevoPedido.tipoEntrega}
+                      Nombre del Cliente: ${nuevoPedido.nombreCliente}
+                      Productos:
+                      ${productosTexto}`;
+
+    const mensajeWhatsapp = `¡Nuevo Pedido!\n\n${pedidoTexto}`;
+    const encodedMessage = encodeURIComponent(mensajeWhatsapp);
+    const whatsappUrl = `https://wa.me/+5493888538446?text=${encodedMessage}`;
+
+    // Abrir WhatsApp en una nueva ventana
+    window.open(whatsappUrl, '_blank');
+
   }
 
   cargarProductosEnPedido(): PedidoProducto[] {
