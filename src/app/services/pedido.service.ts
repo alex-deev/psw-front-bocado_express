@@ -91,6 +91,7 @@ export class PedidoService {
 
   vaciarCarrito() {
     this.carrito = [];
+    this.cantidadCarrito = 0;
   }
 
 }
