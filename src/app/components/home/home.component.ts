@@ -26,6 +26,11 @@ export class HomeComponent {
     this.productosCarrito = this.pedidoService.obtenerCarrito();
   }
 
+  vaciarCarrito() {
+    this.pedidoService.vaciarCarrito();
+    this.obtenerCarrito();
+  }
+
   obtenerTotalPedido(): number {
     let total = 0;
     this.productosCarrito.forEach((producto) => {

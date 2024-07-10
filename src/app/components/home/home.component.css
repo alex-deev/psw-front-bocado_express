@@ -1,4 +1,28 @@
-/* .total{
-    margin-left: 850px;
-    margin-top: 50px;
-} */
+.table {
+    min-width: 40rem;
+}
+
+.img-fluid {
+    width: 7rem;
+    transition: transform .2s;
+}
+
+.img-fluid:hover {
+    transform: scale(1.22);
+}
+
+#form-parent {
+    overflow: hidden;
+}
+
+#pedido-form {
+    transition: transform .2s;
+}
+
+#pedido-form:hover {
+    transform: scale(1.088);
+}
+
+#carrito-icon {
+    font-size: 40px;
+}
