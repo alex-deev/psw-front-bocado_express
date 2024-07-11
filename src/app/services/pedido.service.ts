@@ -73,7 +73,7 @@ export class PedidoService {
 
   cargarCarrito(producto: Producto) {
     // Busca en el carrito, por el id del producto que llega por parámetro
-    const indiceExiste = this.carrito.findIndex((p) => p.id == producto.id);
+    const indiceExiste = this.carrito.findIndex((p) => p.id == producto.id); //se devuelve -1 no existe el producto en el carrito
 
     if(indiceExiste != -1) {
       this.carrito[indiceExiste].cantidad ++ ;

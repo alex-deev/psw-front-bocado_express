@@ -14,7 +14,7 @@
     <tbody>
       @for (pedido of pedidos; track $index) {
       <tr>
-        <td scope="row">{{ $index }}</td>
+        <td scope="row">{{ $index + 1 }}</td>
         <td>{{ formatearFecha(pedido.fechaHora) }}</td>
         <td>{{ pedido.nombreCliente }}</td>
         <td>$ {{ pedido.precioTotal }}</td>

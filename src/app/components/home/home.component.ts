@@ -49,13 +49,13 @@ export class HomeComponent {
       Swal.fire({
         background: "transparent",
         title: '<span style="color: white;">Delicioso!</span>',
-        html: '<span style="color: white;">Realizando su hamburguesa.</span>',
+        html: '<span style="color: white;">Realizando su pedido.</span>',
         imageUrl: "https://i.pinimg.com/originals/43/e1/c2/43e1c20c93b24a7ac41ac8e022f827fc.gif",
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: "Hamburguesa saltarina",
         showConfirmButton: false,
-        timer: 2000,
+        timer: 3000,
       });
       
       this.nuevoPedido.precioTotal = this.obtenerTotalPedido();
