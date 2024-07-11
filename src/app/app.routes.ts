@@ -10,5 +10,10 @@ export const routes: Routes = [
     {
         path: 'cliente',
         component: ClienteComponent
+    },
+    {
+        path: '',
+        redirectTo: 'cliente',
+        pathMatch: 'full'
     }
 ];
