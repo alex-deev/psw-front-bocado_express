@@ -60,6 +60,8 @@ export class HomeComponent {
       
       this.nuevoPedido.precioTotal = this.obtenerTotalPedido();
       this.pedidoService.hacerPedido(this.nuevoPedido).subscribe();
+      this.vaciarCarrito();
+      this.nuevoPedido = new Pedido();
     }
   }
 }

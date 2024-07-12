@@ -4,8 +4,9 @@
     <thead>
       <tr>
         <th class="col-1" scope="col">#</th>
-        <th class="col-2" scope="col">Fecha y Hora</th>
-        <th class="col-3" scope="col">Nombre del Cliente</th>
+        <th class="col-1" scope="col">Fecha y Hora</th>
+        <th class="col-2" scope="col">Nombre del Cliente</th>
+        <th class="col-2" scope="col">Observacion</th>
         <th class="col-2" scope="col">Precio Total</th>
         <th class="col-2" scope="col">Tipo de Entrega</th>
         <th class="col-2" scope="col">Comprado</th>
@@ -17,6 +18,7 @@
         <td scope="row">{{ $index + 1 }}</td>
         <td>{{ formatearFecha(pedido.fechaHora) }}</td>
         <td>{{ pedido.nombreCliente }}</td>
+        <td>{{ pedido.observacion }}</td>
         <td>$ {{ pedido.precioTotal }}</td>
         <td>{{ pedido.tipoEntrega }}</td>
         <td>
