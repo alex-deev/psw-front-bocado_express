@@ -25,3 +25,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+#imagenProducto{
+    width: 256px;
+    height: 270px;
+}
