@@ -60,7 +60,10 @@ export class PedidoService {
     const whatsappUrl = `https://wa.me/+5493888538446?text=${encodedMessage}`;
 
     // Abrir WhatsApp en una nueva ventana
-    window.open(whatsappUrl, '_blank');
+    setTimeout(() => {
+      window.open(whatsappUrl, '_blank');
+    }, 3000); // 3000 milisegundos = 3 segundos
+    //window.open(whatsappUrl, '_blank');
 
   }
 
