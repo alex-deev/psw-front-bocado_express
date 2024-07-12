@@ -2,7 +2,6 @@
     width: 16rem;
     transition: transform .2s;
     transform: translateZ(0);
-    background: linear-gradient(to bottom, #555555, #ffffff);
 }
 .card:hover {
     transform: scale(1.088);
@@ -10,6 +9,7 @@
 
 .card-body {
     backface-visibility: hidden;
+    background: linear-gradient(to bottom, #e2e3e5,#e6e6e6, #ffffff);
 }
 
 .card-text-truncate {
@@ -26,6 +26,5 @@
     overflow: hidden;
 }
 #imagenProducto{
-    width: 256px;
-    height: 270px;
+    height: 16rem;
 }
